@@ -4,13 +4,15 @@ import { format } from "date-fns";
 import Link from "next/link";
 
 const PostCard = (post: Post) => (
-  <div className="flex flex-col gap-1 w-full">
+  <div className="flex flex-col gap-2 w-full">
     <Link href={post.url}>
-      <div className="font-semibold text-lg border-b-4 text-blue-500 border-white hover:border-blue-500 transition-all duration-300 ease-in-out inline-block w-auto">
+      <div className="font-semibold text-lg text-blue-500 relative inline-block w-auto group">
         {post.title}
+        <span className="absolute top-7 left-0 w-full h-[3px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in-out"></span>
       </div>
     </Link>
-    <time dateTime={post.date}>
+
+    <time dateTime={post.date} className="font-semibold text-base">
       {format(parseISO(post.date), "MMMM dd, yyyy")}
     </time>
     <p>{post.summary}</p>
@@ -23,9 +25,9 @@ export default function Home() {
   });
 
   return (
-    <div className="max-w-xl mx-auto">
-      <h1 className="text-4xl font-bold text-center">Hello World</h1>
-      <ul className="flex flex-col gap-4 mt-4">
+    <div className="max-w-xl mx-auto flex flex-col gap-8 my-6">
+      <h1 className="text-4xl font-bold text-center">📝 My Blog</h1>
+      <ul className="flex flex-col gap-4 h-[82vh] overflow-y-scroll">
         {posts.map((post) => (
           <li key={post._id}>
             <PostCard {...post} />
