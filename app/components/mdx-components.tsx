@@ -2,7 +2,7 @@ import { useMDXComponent } from "next-contentlayer2/hooks";
 
 const components = {
   h1: ({ ...props }) => (
-    <h1 className="text-xl text-center font-semibold mb-8" {...props} />
+    <h1 className="text-xl text-center font-semibold mb-9" {...props} />
   ),
   h2: ({ ...props }) => (
     <h2 className="text-lg font-semibold mt-6 mb-4" {...props} />
@@ -15,6 +15,9 @@ const components = {
       className="border-l-4 border-blue-500 pl-4 py-2 my-4"
       {...props}
     />
+  ),
+  img: ({ ...props }) => (
+    <img className="w-full rounded-lg my-10" {...props} />
   ),
 };
 
