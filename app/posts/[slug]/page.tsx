@@ -27,9 +27,9 @@ export default function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="max-w-xl mx-auto flex flex-col gap-5 my-7 items-start">
+    <article className="max-w-xl mx-auto flex flex-col gap-10 my-7 items-start">
       <div className="flex items-center flex-row-reverse gap-6 justify-center">
-        <div>
+        <div className="flex gap-1 flex-col">
           <h1 className="text-3xl font-bold text-center text-blue-500">
             {post.title}
           </h1>
