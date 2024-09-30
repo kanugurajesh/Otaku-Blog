@@ -1,5 +1,6 @@
 import { allPosts } from "@/.contentlayer/generated";
 import Link from "next/link";
+import Mdx from "@/app/components/mdx-components";
 
 interface PostPageProps {
   params: {
@@ -10,11 +11,16 @@ interface PostPageProps {
 export default function PostPage({ params }: PostPageProps) {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
 
-  if (!post?.body.html) {
+  if (!post?.body.code) {
     return (
       <div className="h-screen text-center flex flex-col justify-center gap-6 font-semibold items-center">
         <span className="text-4xl text-red-500">Post not found !</span>
-        <Link href="/" className="border-2 border-black p-2 rounded-md px-3 text-white bg-black hover:bg-white hover:text-black transition-all duration-200 ease-in-out">← Home Page</Link>
+        <Link
+          href="/"
+          className="border-2 border-black p-2 rounded-md px-3 text-white bg-black hover:bg-white hover:text-black transition-all duration-200 ease-in-out"
+        >
+          ← Home Page
+        </Link>
       </div>
     );
   }
@@ -28,10 +34,7 @@ export default function PostPage({ params }: PostPageProps) {
       >
         {new Date(post.date).toLocaleDateString()}
       </time>
-      <div
-        className="text-sm [&>*]:mb-3 [&>*:last-child]:mb-0"
-        dangerouslySetInnerHTML={{ __html: post.body.html }}
-      />
+      <Mdx code={post.body.code} />
     </article>
   );
 }
