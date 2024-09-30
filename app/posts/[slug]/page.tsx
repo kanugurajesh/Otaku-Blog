@@ -27,16 +27,23 @@ export default function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="max-w-xl mx-auto flex flex-col gap-2 my-7">
-      <h1 className="text-3xl font-bold text-center text-blue-500">
-        {post.title}
-      </h1>
-      <time
-        dateTime={post.date}
-        className="font-semibold text-center text-lg mb-4"
-      >
-        {format(parseISO(post.date), "MMMM dd, yyyy")}
-      </time>
+    <article className="max-w-xl mx-auto flex flex-col gap-5 my-7 items-start">
+      <div className="flex items-center flex-row-reverse gap-6 justify-center">
+        <div>
+          <h1 className="text-3xl font-bold text-center text-blue-500">
+            {post.title}
+          </h1>
+          <time
+            dateTime={post.date}
+            className="font-semibold text-center text-lg mb-4"
+          >
+            {format(parseISO(post.date), "MMMM dd, yyyy")}
+          </time>
+        </div>
+        <Link href="/" className="text-4xl border-2 border-black bg-black inline-block rounded-full w-10 h-10 relative text-white cursor-pointer hover:text-black hover:bg-white transition-all ease-in-out duration-300">
+          <span className="absolute bottom-[2.5px] left-1">&larr;</span>
+        </Link>
+      </div>
       <div>
         <Mdx code={post.body.code} />
       </div>
