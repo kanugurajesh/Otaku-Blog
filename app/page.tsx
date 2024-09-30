@@ -1,6 +1,5 @@
 import { allPosts, Post } from "@/.contentlayer/generated";
-import { parseISO } from "date-fns";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import Link from "next/link";
 
 const PostCard = (post: Post) => (
@@ -26,8 +25,8 @@ export default function Home() {
 
   return (
     <div className="max-w-xl mx-auto flex flex-col gap-8 my-6">
-      <h1 className="text-4xl font-bold text-center">📝 My Blog</h1>
-      <ul className="flex flex-col gap-4 h-[82vh] overflow-y-scroll">
+      <h1 className="text-4xl font-bold text-center">⛩️ Otaku</h1>
+      <ul className="flex flex-col gap-6 h-[82vh] overflow-y-scroll">
         {posts.map((post) => (
           <li key={post._id}>
             <PostCard {...post} />

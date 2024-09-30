@@ -1,6 +1,7 @@
 import { allPosts } from "@/.contentlayer/generated";
 import Link from "next/link";
 import Mdx from "@/app/components/mdx-components";
+import { format, parseISO } from "date-fns";
 
 interface PostPageProps {
   params: {
@@ -27,14 +28,18 @@ export default function PostPage({ params }: PostPageProps) {
 
   return (
     <article className="max-w-xl mx-auto flex flex-col gap-2 my-7">
-      <h1 className="text-3xl font-bold text-center">{post.title}</h1>
+      <h1 className="text-3xl font-bold text-center text-blue-500">
+        {post.title}
+      </h1>
       <time
         dateTime={post.date}
-        className="text-2xl font-bold text-center mb-5"
+        className="font-semibold text-center text-lg mb-4"
       >
-        {new Date(post.date).toLocaleDateString()}
+        {format(parseISO(post.date), "MMMM dd, yyyy")}
       </time>
-      <Mdx code={post.body.code} />
+      <div>
+        <Mdx code={post.body.code} />
+      </div>
     </article>
   );
 }
