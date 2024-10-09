@@ -78,3 +78,7 @@ This is a complex blog application on my favourite anime characters. It provides
 ![Screenshot 2024-10-09 151147](https://github.com/user-attachments/assets/cba6ece7-449c-4283-9417-c8a5d94e3ed6)
 
 ![Screenshot 2024-10-09 151152](https://github.com/user-attachments/assets/8c7731ab-3c77-4f0c-aa96-404feecd5c29)
+
+## Demo
+
+[![Otaku Blog](https://img.youtube.com/vi/VlyUfaK38_s/0.jpg)](https://www.youtube.com/watch?v=VlyUfaK38_s)
