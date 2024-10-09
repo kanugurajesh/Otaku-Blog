@@ -70,3 +70,11 @@ This is a complex blog application on my favourite anime characters. It provides
 🖥️ **Frontend**: Next.js, TypeScript, Tailwind CSS  
 🎨 **Content Management**: Contentlayer, Markdown  
 🎨 **Animations**: Lottie Animation  
+
+## Images
+
+![Screenshot 2024-10-09 151140](https://github.com/user-attachments/assets/0344962f-dcbc-4d38-b6f7-2ef011681e88)
+
+![Screenshot 2024-10-09 151147](https://github.com/user-attachments/assets/cba6ece7-449c-4283-9417-c8a5d94e3ed6)
+
+![Screenshot 2024-10-09 151152](https://github.com/user-attachments/assets/8c7731ab-3c77-4f0c-aa96-404feecd5c29)
